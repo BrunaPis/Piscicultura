@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Piscicultura</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <h1>Projeto Piscicultura</h1>
+    </div>
+
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+            <a href="/form" class="btn-success"> Adicionar </a>
+    </div>
+
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+        <form method="get">
+            <input type="text" id="search" name="search" class="form-control" placeholder="Buscar">
+        </form>
+      </div>
+    <div class="col-8 m-auto pt-4 pb-2 text-center">
+        <table class="table">
+          <!--INICIO DO CABEÇALHO -->
+          <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Piscicultor</th>
+                <th scope="col">RG</th>
+                <th scope="col">Contato</th>
+                <th scope="col">Ações</th>
+            </tr>
+          </thead>
+            <!-- FIM DO CABEÇALHO-->
+          <tbody>
+           <!-- CORPO DA LINHA-->
+               {% for dbs in db %}
+            <tr>
+                 <th scope="row">{{dbs.id}}</th>
+                 <td>{{dbs.piscicultor}}</td>
+                 <td>{{dbs.rg}}</td>
+                 <td>{{dbs.contato}}</td>
+                <td>
+                    <a href="/view/{{dbs.id}}/" class ="btn btn-dark">Visualizar</a>
+                     <a href="/edit/{{dbs.id}}/" class ="btn btn-primary">Editar</a>
+                     <a href="delete/{{dbs.id}}/" class ="btn btn-danger btnDel">Deletar</a>
+                </td>
+            </tr>
+            {% endfor %}
+         </tbody>
+        </table>
+    </div>
+
+     <div class="pagination">
+    {% if db.has_previous %}
+        <a href="?page={{db.previous_page_number}}"> < </a>
+    {% endif %}
+
+    {{db.number}}
+
+    {% if db.has_next %}
+        <a href="?page={{db.next_page_number}}"> > </a>
+    {% endif %}
+    </div>
+
+
+
+         {% load static %}
+         <script src="{% static 'javascripts.js' %}"></script>
+
+</body>
+</html>
