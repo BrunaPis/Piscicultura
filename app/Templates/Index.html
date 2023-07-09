@@ -7,11 +7,11 @@
 </head>
 <body>
     <div class="col-8 m-auto pt-2 pb-2 text-center">
-        <h1>Projeto Piscicultura</h1>
+        <h1>FISH INFO</h1>
     </div>
 
     <div class="col-8 m-auto pt-3 pb-2 text-center">
-            <a href="/form" class="btn-success"> Adicionar </a>
+            <a href="/form" class="btn-success"> Adicionar Piscicultores</a>
     </div>
 
     <div class="col-8 m-auto pt-3 pb-2 text-center">
@@ -68,5 +68,131 @@
          {% load static %}
          <script src="{% static 'javascripts.js' %}"></script>
 
-</body>
+     <div class="col-8 m-auto pt-3 pb-2 text-center">
+            <a href="/form2" class="btn-success"> Adicionar Viveiros</a>
+    </div>
+
+    <div class="col-8 m-auto pt-4 pb-2 text-center"style="font-size: 12px;">
+        <table class="table">
+
+          <!--INICIO DO CABEÇALHO -->
+          <thead class="thead-dark">
+            <tr>
+
+                <th scope="col">#</th>
+                <th scope="col">Biomassa do viveiro</th>
+                <th scope="col">Data Inicial</th>
+                <th scope="col">Mortalidade</th>
+                <th scope="col">Data Retirada</th>
+                <th scope="col">N° viveiro</th>
+                <th scope="col">Temperatura</th>
+                <th scope="col">LarguraM</th>
+                <th scope="col">Ganho Viveiro</th>
+                <th scope="col">Lado menorM</th>
+                <th scope="col">PH da agua</th>
+                <th scope="col">Amostragem Veveiro</th>
+                <th scope="col">N° de peixe no Viveiro</th>
+                <th scope="col">Ações</th>
+            </tr>
+          </thead>
+            <!-- FIM DO CABEÇALHO-->
+          <tbody>
+           <!-- CORPO DA LINHA-->
+               {% for dbs in db %}
+            <tr>
+                 <th scope="row">{{dbs.id}}</th>
+                 <td>{{dbs.biomassaViveiro}}</td>
+                 <td>{{dbs.dataIniciar}}</td>
+                 <td>{{dbs.mortalidade}}</td>
+                 <td>{{dbs.dataRetirada}}</td>
+                 <td>{{dbs.numeroViveiro}}</td>
+                 <td>{{dbs.temperatura}}</td>
+                 <td>{{dbs.largura_M}}</td>
+                 <td>{{dbs.ganhoViveiro}}</td>
+                 <td>{{dbs.ladoMenor_M}}</td>
+                 <td>{{dbs.pH_daAgua}}</td>
+                 <td>{{dbs.amostragemViveiro}}</td>
+                 <td>{{dbs.numeroPeixesViveiro}}</td>
+
+                <td>
+                    <a href="/view2/{{dbs.id}}/" class ="btn btn-dark">Visualizar</a>
+                     <a href="/edit2/{{dbs.id}}/" class ="btn btn-primary">Editar</a>
+                     <a href="delete2/{{dbs.id}}/" class ="btn btn-danger btnDel">Deletar</a>
+                </td>
+            </tr>
+                {% endfor %}
+         </tbody>
+        </table>
+    </div>
+   <div class="col-8 m-auto pt-3 pb-2 text-center">
+            <a href="/form3" class="btn-success"> Adicionar Peixes</a>
+    </div>
+
+    <div class="col-8 m-auto pt-4 pb-2 text-center">
+        <table class="table">
+          <!--INICIO DO CABEÇALHO -->
+          <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Especie</th>
+                <th scope="col">Peso Medio do Peixe_kg</th>
+                <th scope="col">Ações</th>
+            </tr>
+          </thead>
+            <!-- FIM DO CABEÇALHO-->
+          <tbody>
+           <!-- CORPO DA LINHA-->
+               {% for dbs in db %}
+            <tr>
+                 <th scope="row">{{dbs.id}}</th>
+                 <td>{{dbs.especie}}</td>
+                 <td>{{dbs.pesoMedioPeixe_kg}}</td>
+                <td>
+                    <a href="/view3/{{dbs.id}}/" class ="btn btn-dark">Visualizar</a>
+                     <a href="/edit3/{{dbs.id}}/" class ="btn btn-primary">Editar</a>
+                     <a href="delete3/{{dbs.id}}/" class ="btn btn-danger btnDel">Deletar</a>
+                </td>
+            </tr>
+            {% endfor %}
+         </tbody>
+        </table>
+    </div>
+
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+            <a href="/form4" class="btn-success"> Adicionar Ração</a>
+    </div>
+
+<div class="col-8 m-auto pt-4 pb-2 text-center">
+        <table class="table">
+          <!--INICIO DO CABEÇALHO -->
+          <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Quantidade de ração kg</th>
+                <th scope="col">Marca da ração</th>
+                <th scope="col">Preço da ração</th>
+                <th scope="col">Proteina Bruta</th>
+                <th scope="col">Ações</th>
+            </tr>
+          </thead>
+            <!-- FIM DO CABEÇALHO-->
+          <tbody>
+           <!-- CORPO DA LINHA-->
+               {% for dbs in db %}
+            <tr>
+                 <th scope="row">{{dbs.id}}</th>
+                 <td>{{dbs.quantidaderacaokg}}</td>
+                 <td>{{dbs.marcaracao}}</td>
+                 <td>{{dbs.precoracao}}</td>
+                 <td>{{dbs.protreinabruta}}</td>
+                <td>
+                     <a href="/view4/{{dbs.id}}/" class ="btn btn-dark">Visualizar</a>
+                     <a href="/edit4/{{dbs.id}}/" class ="btn btn-primary">Editar</a>
+                     <a href="delete4/{{dbs.id}}/" class ="btn btn-danger btnDel">Deletar</a>
+                </td>
+            </tr>
+            {% endfor %}
+         </tbody>
+        </table>
+ </body>
 </html>

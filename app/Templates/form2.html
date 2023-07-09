@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="br-pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Cadastro</title>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <h1>Cadastro Viveiro</h1>
+    </div>
+
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <a href="/" class="btn btn-success">Voltar</a>
+    </div>
+
+<div class="col-8 m-auto pt-2 pb-2 text-center">
+    <div id="result"></div>
+        <form name="form2" id="form2" action="{% if db %}/update2/{{db.id}}/{% else %}/create2/{% endif %}" method="POST">
+            {% csrf_token %}
+            <div class="form2-group mt-4">Biomassa do Viveiro:{{form2.biomassaViveiro}}</div>
+            <div class="form2-group mt-4">Data Inicial:{{form2.dataIniciar}}</div>
+            <div class="form2-group mt-4">Mortalidade:{{form2.mortalidade}}</div>
+            <div class="form2-group mt-4">Data da Retirada:{{form2.dataRetirada}}</div>
+            <div class="form2-group mt-4">N° do Viveiro:{{form2.numeroViveiro}}</div>
+            <div class="form2-group mt-4">Temperatura:{{form2.temperatura}}</div>
+            <div class="form2-group mt-4">LarguraM:{{form2.largura_M}}</div>
+            <div class="form2-group mt-4">Ganho Viveiro:{{form2.ganhoViveiro}}</div>
+            <div class="form2-group mt-4">Lado MenorM:{{form2.ladoMenor_M}}</div>
+            <div class="form2-group mt-4">PH da Agua:{{form2.pH_daAgua}}</div>
+            <div class="form2-group mt-4">Amostragem Viveiro:{{form2.amostragemViveiro}}</div>
+            <div class="form2-group mt-4">N° de Peixe no viveiro:{{form2.numeroPeixesViveiro}}</div>
+            <div class="form2-group mt-4">
+                <input type="submit" class=" btn btn-success" value="Salvar">
+            </div>
+        </form>
+         {% load static %}
+         <script src="{% static 'javascripts.js' %}"></script>
+    </div>
+</body>
+
+</html>
