@@ -1,10 +1,19 @@
 from django.shortcuts import render, redirect
-from app.form import PiscicultoresForm, PeixesForm, RacaoForm, ViveirosForm2
-from app.models import Piscicultores, Viveiros,Peixes, Racao
-
+from app.form import PiscicultoresForm, PeixesForm
+from app.form import ViveirosForm2, RacaoForm
+from app.models import Piscicultores, Viveiros, Peixes, Racao
+from django.contrib.auth.views import LoginView, LogoutView
+from django.urls import reverse_lazy
 from django.core.paginator import Paginator
 #from django.shortcuts import  HttpResponse
 
+
+class CustomLoginView(LoginView):
+    template_name = 'login.html'
+    success_url = reverse_lazy('home')  # redirecionar para a página inicial após o login
+
+class CustomLogoutView(LogoutView):
+    next_page = reverse_lazy('login')
 def home (request):
     data={}
     search = request.GET.get('search')
@@ -55,19 +64,21 @@ def delete (request,pk):
     return redirect('home')
 
 
+
 def home2 (request):
     data={}
     search = request.GET.get('search')
     if search:
-        data['db'] = Viveiros.objects.filter()
+        data['db'] = Viveiros.objects.filter(search)
     else:
         data['db'] = Viveiros.objects.all()
-    return render(request,'index.html',data)
+        return render(request, 'index.html', data)
 
 def form2 (request):
     data={}
-    data['form']= ViveirosForm2()
-    return render(request,'form.html',data)
+    data['form2']= ViveirosForm2()
+    return render(request,'form2.html',data)
+
 
 def create2 (request):
     form= ViveirosForm2(request.POST or None)
@@ -75,24 +86,26 @@ def create2 (request):
         form.save()
     return redirect('home2')
 
-def view2 (request,pk):
+
+def view2(request,pk):
     data = {}
     data['db'] = Viveiros.objects.get(pk=pk)
     return render(request, 'view.html',data)
 
 def edit2 (request,pk):
     data = {}
-    data['db'] =Viveiros.objects.get(pk=pk)
-    data['form']=ViveirosForm2(instance=data['db'])
+    data['db'] = Viveiros.objects.get(pk=pk)
+    data['form2']=ViveirosForm2(instance=data['db'])
     return render(request, 'form2.html', data)
 
 def update2 (request,pk):
     data = {}
     data['db'] = Viveiros.objects.get(pk=pk)
-    form = ViveirosForm2(request.POST or None, instance=data['db'])
-    if form.is_valid():
-        form.save()
+    form2 = ViveirosForm2(request.POST or None, instance=data['db'])
+    if form2.is_valid():
+        form2.save()
         return redirect('home2')
+
 
 def delete2 (request,pk):
     db= Viveiros.objects.get(pk=pk)
@@ -129,7 +142,7 @@ def view3 (request,pk):
 def edit3 (request,pk):
     data = {}
     data['db'] = Peixes.objects.get(pk=pk)
-    data['form3']=PeixesForm(instance=data['db'])
+    data['form']=PeixesForm(instance=data['db'])
     return render(request, 'form3.html', data)
 
 def update3 (request,pk):
@@ -144,9 +157,6 @@ def delete3 (request,pk):
     db= Peixes.objects.get(pk=pk)
     db.delete()
     return redirect('home3')
-
-
-
 
 def home4 (request):
     data={}
