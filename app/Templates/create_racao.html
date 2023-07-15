@@ -1,32 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="br-pt">
 <head>
-      <link rel="stylesheet" href="{% static 'css/create_peixe.css' %}">
+    <link rel="stylesheet" href="{% static 'css/create_racao.css' %}">
 
 </head>
 <body>
-    <div class="col-8 m-auto pt-2 pb-2 text-center">
-        <h1>Cadastro Ração</h1>
-    </div>
+<div class="form-container">
+    <form class="horizontal-form">
 
-    <div class="col-8 m-auto pt-2 pb-2 text-center">
-        <a href="/" class="btn btn-success">Voltar</a>
-    </div>
+            <input type="button" id="voltar" value="Voltar">
+        <h2>Cadastro de Ração</h2>
+        <div class="form-row">
+            <label for="quantidadederacaokg">Quantidade de Racao kg:</label>
+            <input type="text" id="quantidadederacaokg">
+        </div>
+        <div class="form-row">
+            <label for="marcadaracao">Marca da ração:</label>
+            <input type="text" id="marcadaracao">
+        </div>
+        <div class="form-row">
+            <label for="precoracao">Preço da ração:</label>
+            <input type="text" id="precoracao">
+        </div>
+        <div class="form-row">
+            <label for="proteinabruta">Proteina Bruta:</label>
+            <input type="text" id="proteinabruta">
+        </div>
 
-<div class="col-8 m-auto pt-2 pb-2 text-center">
-    <div id="result"></div>
-        <form name="form4" id="form4" action="{% if db %}/update4/{{db.id}}/{% else %}/create4/{% endif %}" method="POST"}>
-            {% csrf_token %}
-            <div class="form-group mt-4">Quantidade de ração kg:{{form4.quantidaderacaokg}}</div>
-            <div class="form-group mt-4">Marca da ração:{{form4.marcaracao}}</div>
-            <div class="form-group mt-4">Preço da ração:{{form4.precoracao}}</div>
-            <div class="form-group mt-4">Proteina Bruta:{{form4.protreinabruta}}</div>
-            <div class="form-group mt-4">
-                <input type="submit" class=" btn btn-success" value="Salvar">
-            </div>
-        </form>
+            <input type="submit"  class="btn btn-success" value="Enviar">
 
-
-    </div>
+    </form>
+</div>
 </body>
 </html>

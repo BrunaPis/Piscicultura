@@ -5,6 +5,7 @@
     width: 300px;
     margin: 0 auto;
     margin-top: 50px;
+    text-align: center;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
 
@@ -21,7 +22,7 @@
 
   /* Estilos para o botão de enviar */
  .form-container button {
-    background-color: #007bff;
+    background-color: green;
     color: #fff;
     border: none;
     padding: 10px 20px;

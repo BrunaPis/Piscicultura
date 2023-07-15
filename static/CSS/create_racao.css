@@ -1,12 +1,11 @@
-
-  .form-container {
+.form-container {
     background-color: #b2d8ff;
     border: 1px solid #ced4da;
-    padding: 20px;
-    width: 400px;
+    padding: 15px;
+    width: 300px;
     margin: 0 auto;
     margin-top: 50px;
-     text-align: center;
+    text-align: center;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
 
@@ -19,17 +18,16 @@
 
   .form-container .form-row label {
     flex: 0 0 120px;
-
   }
 
   .form-container .form-row input,
   .form-container .form-row select {
     flex: 1;
-    padding: 8px 15px;
+    padding: 8px;
     border: 1px solid #ced4da;
-
-
+    border-radius: 4px;
   }
+
 .btn-success {
   background-color: #28a745;
   border-color: #28a745;
