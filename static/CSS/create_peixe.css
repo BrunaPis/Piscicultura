@@ -1,0 +1,50 @@
+.form-container {
+    background-color: #b2d8ff;
+    border: 1px solid #ced4da;
+    padding: 20px;
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 50px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Estilos para os campos do formulário */
+  .form-container .form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .form-container .form-row label {
+    flex: 0 0 120px;
+  }
+
+  .form-container .form-row input,
+  .form-container .form-row select {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+  }
+
+
+button:hover {
+  background-color: #45a049;
+}
+
+a {
+  text-decoration: none;
+  color: #2196F3;
+  margin-top: 10px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.forgot-password,
+.register {
+   color: white;
+
+
+}

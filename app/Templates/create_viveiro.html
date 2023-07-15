@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="br-pt">
+
+<link rel="stylesheet" href="{% static 'css/create_viveiro.css' %}">
+<form>
+  <div class="form-container">
+    <form class="horizontal-form">
+      <div class="form-row">
+
+        <input type="button" id="voltar" value="Voltar">
+      </div>
+      <h2>Cadastro Viveiro</h2>
+      <div class="form-row">
+        <label for="biomassa">Biomassa do Viveiro:</label>
+        <input type="text" id="biomassa" name="biomassa">
+      </div>
+        <div class="form-row">
+        <label for="data-INICIAL">Data inicial:</label>
+        <input type="date" id="data-inicial">
+      </div>
+      <div class="form-row">
+        <label for="mortalidade">Mortalidade:</label>
+        <input type="text" id="mortalidade">
+      </div>
+      <div class="form-row">
+        <label for="data-retirada">Data da Retirada:</label>
+        <input type="date" id="data-retirada">
+      </div>
+      <div class="form-row">
+        <label for="numero-viveiro">Nº do Viveiro:</label>
+        <input type="text" id="numero-viveiro">
+      </div>
+      <div class="form-row">
+        <label for="temperatura">Temperatura:</label>
+        <input type="text" id="temperatura">
+      </div>
+      <div class="form-row">
+        <label for="largura">Largura (m):</label>
+        <input type="text" id="largura">
+      </div>
+      <div class="form-row">
+        <label for="ganho-viveiro">Ganho Viveiro:</label>
+        <input type="text" id="ganho-viveiro">
+      </div>
+      <div class="form-row">
+        <label for="lado-menor">Lado Menor (m):</label>
+        <input type="text" id="lado-menor">
+      </div>
+      <div class="form-row">
+        <label for="ph-agua">PH da Água:</label>
+        <input type="text" id="ph-agua">
+      </div>
+      <div class="form-row">
+        <label for="amostragem-viveiro">Amostragem Viveiro:</label>
+        <input type="text" id="amostragem-viveiro">
+      </div>
+      <div class="form-row">
+        <label for="numero-peixe">N° de Peixe no viveiro:</label>
+        <input type="text" id="numero-peixe">
+      </div>
+      <div class="form-row">
+        <input type="submit" value="Enviar">
+      </div>
+  </div>
+</form>
+<html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <div class="col-8 m-auto pt-3 pb-2 text-center">
+            <a href="/form2" class="btn-success"> Adicionar Viveiros</a>
+    </div>
+
+    <div class="col-8 m-auto pt-4 pb-2 text-center">
+        <table class="table">
+
+          <!--INICIO DO CABEÇALHO -->
+          <thead class="thead-dark" style="font-size: 10px;">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Biomassa do viveiro</th>
+                <th scope="col">Data Inicial</th>
+                <th scope="col">Mortalidade</th>
+                <th scope="col">Data Retirada</th>
+                <th scope="col">N° viveiro</th>
+                <th scope="col">Temperatura</th>
+                <th scope="col">LarguraM</th>
+                <th scope="col">Ganho Viveiro</th>
+                <th scope="col">Lado menorM</th>
+                <th scope="col">PH da agua</th>
+                <th scope="col">Amostragem Veveiro</th>
+                <th scope="col">N° de peixe no Viveiro</th>
+                <th scope="col">Ações</th>
+            </tr>
+          </thead>
+            <!-- FIM DO CABEÇALHO-->
+          <tbody>
+           <!-- CORPO DA LINHA-->
+               {% for dbs in db %}
+            <tr>
+                 <th scope="row">{{dbs.id}}</th>
+                 <td>{{dbs.biomassaViveiro}}</td>
+                 <td>{{dbs.dataIniciar}}</td>
+                 <td>{{dbs.mortalidade}}</td>
+                 <td>{{dbs.dataRetirada}}</td>
+                 <td>{{dbs.numeroViveiro}}</td>
+                 <td>{{dbs.temperatura}}</td>
+                 <td>{{dbs.largura_M}}</td>
+                 <td>{{dbs.ganhoViveiro}}</td>
+                 <td>{{dbs.ladoMenor_M}}</td>
+                 <td>{{dbs.pH_daAgua}}</td>
+                 <td>{{dbs.amostragemViveiro}}</td>
+                 <td>{{dbs.numeroPeixesViveiro}}</td>
+
+                <td>
+
+                    <a href="/view2/{{dbs.id}}/" class ="btn btn-dark"style="font-size: 8px;">Visualizar</a>
+                     <a href="/edit2/{{dbs.id}}/" class ="btn btn-primary"style="font-size: 8px;">Editar</a>
+                     <a href="delete2/{{dbs.id}}/" class ="btn btn-danger btnDel"style="font-size: 8px;">Deletar</a>
+                </td>
+            </tr>
+                {% endfor %}
+         </tbody>
+        </table>
+        <div>
+ </body>
+</html>

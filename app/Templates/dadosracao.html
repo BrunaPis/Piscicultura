@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="col-8 m-auto pt-3 pb-2 text-center">
+            <a href="/form4" class="btn-success"> Adicionar Ração</a>
+    </div>
+
+<div class="col-8 m-auto pt-4 pb-2 text-center">
+        <table class="table">
+          <!--INICIO DO CABEÇALHO -->
+          <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Quantidade de ração kg</th>
+                <th scope="col">Marca da ração</th>
+                <th scope="col">Preço da ração</th>
+                <th scope="col">Proteina Bruta</th>
+                <th scope="col">Ações</th>
+            </tr>
+          </thead>
+            <!-- FIM DO CABEÇALHO-->
+          <tbody>
+           <!-- CORPO DA LINHA-->
+               {% for dbs in db %}
+            <tr>
+                 <th scope="row">{{dbs.id}}</th>
+                 <td>{{dbs.quantidaderacaokg}}</td>
+                 <td>{{dbs.marcaracao}}</td>
+                 <td>{{dbs.precoracao}}</td>
+                 <td>{{dbs.protreinabruta}}</td>
+                <td>
+                     <a href="/view4/{{dbs.id}}/" class ="btn btn-dark"style="font-size: 8px;">Visualizar</a>
+                     <a href="/edit4/{{dbs.id}}/" class ="btn btn-primary"style="font-size: 8px;">Editar</a>
+                     <a href="delete4/{{dbs.id}}/" class ="btn btn-danger btnDel"style="font-size: 8px;">Deletar</a>
+                </td>
+            </tr>
+            {% endfor %}
+         </tbody>
+        </table>
+   <div>
+ </body>
+</html>
