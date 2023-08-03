@@ -13,7 +13,6 @@ class ViveirosForm2(ModelForm):
         fields = ['biomassaViveiro', 'dataIniciar', 'mortalidade', 'dataRetirada', 'numeroViveiro', 'temperatura', 'largura_M', 'ganhoViveiro', 'ladoMenor_M', 'pH_daAgua', 'amostragemViveiro', 'numeroPeixesViveiro']
 
 
-
 class PeixesForm(ModelForm):
     class Meta:
         model =Peixes
