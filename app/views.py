@@ -30,3 +30,15 @@ def create_peixe(request):
 
 def create_racao(request):
     return render(request, 'create_racao.html')
+
+def viewspiscicultor(request):
+    return render(request, 'viewspiscicultor.html')
+
+def viewsviveiro(request):
+    return render(request, 'viewsviveiro.html')
+
+def viewspeixe(request):
+    return render(request, 'viewspeixe.html')
+
+def viewsracao(request):
+    return render(request, 'viewsracao.html')

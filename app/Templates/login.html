@@ -19,14 +19,13 @@
       <!-- Campos de login -->
       <input type="text" name="username" placeholder="Nome de usuário">
       <input type="password" name="password" placeholder="Senha">
-      <button type="submit">Entrar<br></button>
+      <button type="submit" onclick="Home()">Entrar<br></button>
     </form>
      <div class="options">
     <a href="#" class="forgot-password text-center">Esqueceu a senha?<br></a>
-    <a href="#" class="register">Cadastrar-se<br></a>
+    <a href="{% url 'create_piscicultor'%}" class="register">Cadastrar-se<br></a>
   </div>
  </body>
-</html>
 
 </body>
 </html>

@@ -19,15 +19,20 @@ from django.urls import path
 
 
 from app.views import home,login,Index,create_piscicultor,create_viveiro,create_peixe,create_racao
-
+from app.views import viewspiscicultor,viewsviveiro,viewspeixe,viewsracao
 urlpatterns = [
 
     path('', home, name='home'),
+    path('home/', home, name='home'),
     path('login/', login, name='login'),
     path('Index/', Index, name='Index'),
     path('create_piscicultor/',create_piscicultor, name='create_piscicultor'),
     path('create_viveiro/', create_viveiro, name='create_viveiro'),
     path('create_peixe/', create_peixe, name='create_peixe'),
     path('create_racao/',create_racao, name='create_racao'),
+    path('viewspiscicultor/',viewspiscicultor, name='viewspiscicultor'),
+    path('viewsviveiro/',viewsviveiro, name='viewsviveiro'),
+    path('viewspeixe/',viewspeixe, name='viewspeixe'),
+    path('viewsracao/',viewsracao, name='viewsracao'),
 
 ]
