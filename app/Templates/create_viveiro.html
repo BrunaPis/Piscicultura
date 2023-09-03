@@ -1,68 +1,87 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="br-pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Cadastro de Viveiro</title>
+    <link rel="stylesheet" href="{% static 'css/create_viveiro.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
+<div class="form-container">
+    <h1 class="text-center">Cadastro  do Viveiro</h1>
+    <div id="result"></div>
+    <form name="formViveiro" id="formViveiro"
+          action="{% if db %}/updateViveiro/{{db.id}}/{% else %}/create_viveiro/{% endif %}" method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="biomassaViveiro">Biomassa do Viveiro</label>
+                    {{formViveiro.biomassaViveiro}}
+                </div>
+                <div class="form-group">
+                    <label for="dataIniciar">Data Inicial</label>
+                    {{formViveiro.dataIniciar}}
+                </div>
+                <div class="form-group">
+                    <label for="mortalidade">Mortalidade</label>
+                    {{formViveiro.mortalidade}}
+                </div>
+                <div class="form-group">
+                    <label for="dataRetirada">Data da Retirada</label>
+                    {{formViveiro.dataRetirada}}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="numeroViveiro">N° do Viveiro</label>
+                    {{formViveiro.numeroViveiro}}
+                </div>
+                <div class="form-group">
+                    <label for="temperatura">Temperatura</label>
+                    {{formViveiro.temperatura}}
+                </div>
+                <div class="form-group">
+                    <label for="largura_M">LarguraM</label>
+                    {{formViveiro.largura_M}}
+                </div>
+                <div class="form-group">
+                    <label for="ganhoViveiro">Ganho Viveiro</label>
+                    {{formViveiro.ganhoViveiro}}
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="ladoMenor_M">Lado MenorM</label>
+                    {{formViveiro.ladoMenor_M}}
+                </div>
+                <div class="form-group">
+                    <label for="pH_daAgua">PH da Agua</label>
+                    {{formViveiro.pH_daAgua}}
+                </div>
+                <div class="form-group">
+                    <label for="amostragemViveiro">Amostragem Viveiro</label>
+                    {{formViveiro.amostragemViveiro}}
+                </div>
+                <div class="form-group">
+                    <label for="numeroPeixesViveiro">N° de Peixe no viveiro</label>
+                    {{formViveiro.numeroPeixesViveiro}}
+                </div>
+            </div>
+        </div>
+        <div class="form-row justify-content-center mt-3">
+            <div class="col-md-2">
+                <input type="submit" class="btn btn-success btn-block" value="Salvar">
+            </div>
+            <div class="col-md-2">
+                <a href="/" class="btn btn-success btn-block">Voltar</a>
+            </div>
+        </div>
+    </form>
 
-<link rel="stylesheet" href="{% static 'css/create_viveiro.css' %}">
-<form>
-  <div class="form-container">
-    <form class="horizontal-form">
-
-<div class="col-8 m-auto pt-2 pb-2 text-center">
-    <a href="/" class="btn btn-success">Voltar</a>
 </div>
+</body>
+</html>
 
-      <h2>Cadastro Viveiro</h2>
-      <div class="form-row">
-        <label for="biomassa">Biomassa do Viveiro:</label>
-        <input type="text" id="biomassa" name="biomassa">
-      </div>
-        <div class="form-row">
-        <label for="data-INICIAL">Data inicial:</label>
-        <input type="date" id="data-inicial">
-      </div>
-      <div class="form-row">
-        <label for="mortalidade">Mortalidade:</label>
-        <input type="text" id="mortalidade">
-      </div>
-      <div class="form-row">
-        <label for="data-retirada">Data da Retirada:</label>
-        <input type="date" id="data-retirada">
-      </div>
-      <div class="form-row">
-        <label for="numero-viveiro">Nº do Viveiro:</label>
-        <input type="text" id="numero-viveiro">
-      </div>
-      <div class="form-row">
-        <label for="temperatura">Temperatura:</label>
-        <input type="text" id="temperatura">
-      </div>
-      <div class="form-row">
-        <label for="largura">Largura (m):</label>
-        <input type="text" id="largura">
-      </div>
-      <div class="form-row">
-        <label for="ganho-viveiro">Ganho Viveiro:</label>
-        <input type="text" id="ganho-viveiro">
-      </div>
-      <div class="form-row">
-        <label for="lado-menor">Lado Menor (m):</label>
-        <input type="text" id="lado-menor">
-      </div>
-      <div class="form-row">
-        <label for="ph-agua">PH da Água:</label>
-        <input type="text" id="ph-agua">
-      </div>
-      <div class="form-row">
-        <label for="amostragem-viveiro">Amostragem Viveiro:</label>
-        <input type="text" id="amostragem-viveiro">
-      </div>
-      <div class="form-row">
-        <label for="numero-peixe">N° de Peixe no viveiro:</label>
-        <input type="text" id="numero-peixe">
-      </div>
-
-        <input type="submit" class="btn btn-success" value="Salvar">
-
-  </div>
-</form>
-<html>

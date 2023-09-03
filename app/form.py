@@ -1,24 +1,36 @@
 from django.forms import ModelForm
-from app.models import Piscicultores, Peixes, Racao
+from app.models import Piscicultores
 from app.models import Viveiros
+from django import forms
 # Create the form class.
-class create_piscicultores(ModelForm):
-    class Meta:
-        model =Piscicultores
-        fields = ['piscicultor','rg','contato']
+from django import forms
+from .models import Piscicultores,Peixes, Racao
 
-class create_viveiro(ModelForm):
+
+class PiscicultoresForm(forms.ModelForm):
+    class Meta:
+        model = Piscicultores
+        fields = ['nome', 'rg', 'contato', 'senha']  # Adicione 'senha' se ainda não estiver lá.
+
+
+class ViveirosForm(ModelForm):
      class Meta:
         model =Viveiros
         fields = ['biomassaViveiro', 'dataIniciar', 'mortalidade', 'dataRetirada', 'numeroViveiro', 'temperatura', 'largura_M', 'ganhoViveiro', 'ladoMenor_M', 'pH_daAgua', 'amostragemViveiro', 'numeroPeixesViveiro']
 
 
-class create_peixe(ModelForm):
+class PeixesForm(ModelForm):
     class Meta:
         model =Peixes
         fields = ['especie','pesoMedioPeixe_kg']
 
-class create_racao(ModelForm):
+
+class RacaoForm(ModelForm):
     class Meta:
         model =Racao
         fields = ['quantidaderacaokg','marcaracao','precoracao','protreinabruta']
+
+
+
+
+

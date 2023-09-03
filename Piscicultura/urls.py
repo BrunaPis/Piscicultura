@@ -17,22 +17,45 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-
-from app.views import home,login,Index,create_piscicultor,create_viveiro,create_peixe,create_racao
-from app.views import viewspiscicultor,viewsviveiro,viewspeixe,viewsracao
+from app.views import create_piscicultor,viewspiscicultor, editPiscicultor, updatePiscicultor, IndexPiscicultor, deletePiscicultor
+from app.views import create_viveiro,viewsviveiro,editViveiro,updateViveiro,deleteViveiro,IndexViveiro
+from app.views import home,login,Index,create_peixe,viewspeixe,updatePeixe,editPeixe,deletePeixe,IndexPeixe
+from app.views import viewspiscicultor,viewsracao,create_racao,updateRacao,editRacao,deleteRacao,IndexRacao
 urlpatterns = [
-
+    path('admin/', admin.site.urls),
     path('', home, name='home'),
-    path('home/', home, name='home'),
     path('login/', login, name='login'),
-    path('Index/', Index, name='Index'),
     path('create_piscicultor/',create_piscicultor, name='create_piscicultor'),
+    path('viewspiscicultor/<int:pk>/', viewspiscicultor, name='viewspiscicultor'),
+    path('editPiscicultor/<int:pk>/', updatePiscicultor, name='editPiscicultor'),
+    path('updatePiscicultor/<int:pk>/', updatePiscicultor, name='updatePiscicultor'),
+    path('deletePiscicultor/<int:pk>/', deletePiscicultor, name='deletePiscicultor'),
+    path('IndexPiscicultor/', IndexPiscicultor, name='IndexPiscicultor'),
+
     path('create_viveiro/', create_viveiro, name='create_viveiro'),
+    path('viewsviveiro/<int:pk>/',viewsviveiro, name='viewsviveiro'),
+    path('editViveiro/<int:pk>/', editViveiro, name='editViveiro'),
+    path('updateViveiro/<int:pk>/', updateViveiro, name='updateViveiro'),
+    path('deleteViveiro/<int:pk>/', deleteViveiro, name='deleteViveiro'),
+    path('IndexViveiro/', IndexViveiro, name='IndexViveiro'),
+
+
     path('create_peixe/', create_peixe, name='create_peixe'),
+    path('viewspeixe/<int:pk>/', viewspeixe, name='viewspeixe'),
+    path('editPeixe/<int:pk>/', editPeixe, name='editPeixe'),
+    path('updatePeixe/<int:pk>/', updatePeixe, name='updatePeixe'),
+    path('deletePeixe/<int:pk>/', deletePeixe, name='deletePeixe'),
+    path('IndexPeixe/', IndexPeixe, name='IndexPeixe'),
+
     path('create_racao/',create_racao, name='create_racao'),
-    path('viewspiscicultor/',viewspiscicultor, name='viewspiscicultor'),
-    path('viewsviveiro/',viewsviveiro, name='viewsviveiro'),
-    path('viewspeixe/',viewspeixe, name='viewspeixe'),
-    path('viewsracao/',viewsracao, name='viewsracao'),
+    path('viewsracao/<int:pk>/', viewsracao, name='viewsracao'),
+    path('editRacao/<int:pk>/', editRacao, name='editRacao'),
+    path('updateRacao/<int:pk>/', updateRacao, name='updateRacao'),
+    path('deleteRacao/<int:pk>/', deleteRacao, name='deleteRacao'),
+    path('IndexRacao/', IndexRacao, name='IndexRacao'),
+
+
+
+
 
 ]

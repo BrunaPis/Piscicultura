@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+
+<div class="col-8 m-auto pt-3 pb-2 text-center">
+    <a href="/" class="btn btn-info">Voltar</a>
+</div>
+<div class="col-8 ">
+    <!-- On rows -->
+    <table class="table table-sm">
+        <table class="table table-bordered small-font">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Biomassa do viveiro</th>
+                <th scope="col">Data Inicial</th>
+                <th scope="col">Mortalidade</th>
+                <th scope="col">Data Retirada</th>
+                <th scope="col">N° viveiro</th>
+                <th scope="col">Temperatura</th>
+                <th scope="col">LarguraM</th>
+                <th scope="col">Ganho Viveiro</th>
+                <th scope="col">Lado menorM</th>
+                <th scope="col">PH da agua</th>
+                <th scope="col">Amostragem Veveiro</th>
+                <th scope="col">N° de peixe no Viveiro</th>
+                <th scope="col"></th>
+
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for dbs in db %}
+            <tr>
+                <th scope="row">{{dbs.id}}</th>
+                <td>{{dbs.biomassaViveiro}}</td>
+                <td>{{dbs.dataIniciar}}</td>
+                <td>{{dbs.mortalidade}}</td>
+                <td>{{dbs.dataRetirada}}</td>
+                <td>{{dbs.numeroViveiro}}</td>
+                <td>{{dbs.temperatura}}</td>
+                <td>{{dbs.largura_M}}</td>
+                <td>{{dbs.ganhoViveiro}}</td>
+                <td>{{dbs.ladoMenor_M}}</td>
+                <td>{{dbs.pH_daAgua}}</td>
+                <td>{{dbs.amostragemViveiro}}</td>
+                <td>{{dbs.numeroPeixesViveiro}}</td>
+                <td>
+                    <a href="/viewsviveiro/{{dbs.id}}/" class="btn btn-primary">Visualizar</a>
+                    <a href="/editViveiro/{{dbs.id}}/" class="btn btn-primary">Editar</a>
+                   <a href="/deleteViveiro/{{dbs.id}}/" class ="btn btn-danger btnDel">Deletar</a>
+
+                </td>
+            </tr>
+{% endfor %}
+ <script src="{% static 'js/confirm_delete.js' %}"></script>
+            </tbody>
+
+        </table>
+
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+ <div class="col-8 m-auto pt-3 pb-2 text-center">
+        <a href="/" class="btn btn-info">Voltar</a>
+    </div>
+
+    <div class="col-8 m-auto pt-4 pb-2 text-center">
+       <!-- On rows -->
+
+  <table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Quantidade de Racao</th>
+      <th scope="col">Marca da Ração</th>
+        <th scope="col">Preço da Ração</th>
+        <th scope="col">Proteina Bruta</th>
+      <th scope="col"></th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+  {% for dbs in db %}
+   <tr>
+      <th>{{dbs.id}}</th>
+      <td>{{dbs.quantidaderacaokg}}</td>
+      <td>{{dbs.marcaracao}}</td>
+     <td>{{dbs.precoracao}}</td>
+     <td>{{dbs.protreinabruta}}</td>
+      <td>
+                     <a href="/viewsracao/{{dbs.id}}/" class ="btn btn-primary">Visualizar</a>
+                     <a href="/editRacao/{{dbs.id}}/" class ="btn btn-primary">Editar</a>
+                     <a href="/deleteRacao/{{dbs.id}}/" class ="btn btn-danger btnDel">Deletar</a>
+      </td>
+    </tr>
+  {% endfor %}
+ <script src="{% static 'js/confirm_delete.js' %}"></script>
+  </tbody>
+
+</table>
+
+</body>
+</html>

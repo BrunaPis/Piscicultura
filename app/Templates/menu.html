@@ -15,7 +15,7 @@
           <a class="navbar-brand" aria-current="page" href="#"><img src="{% static 'imagem/logo3.png' %}" height="80px"/></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{% url 'viewspiscicultor'%}">Piscicultor</a>
+          <a class="nav-link" href="{% url 'IndexPiscicultor'%}">Piscicultor</a>
         </li>
           <li class="nav-item">
           <a class="nav-link" href="#">Biometria peixe</a>
@@ -26,9 +26,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{% url 'create_viveiro'%}">cadastrar</a></li>
-            <li><a class="dropdown-item" href="{% url 'viewsviveiro'%}">Visualizar</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Editar</a></li>
+            <li><a class="dropdown-item" href="{% url 'IndexPeixe'%}">Editar</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -37,9 +35,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{% url 'create_peixe'%}">cadastrar</a></li>
-            <li><a class="dropdown-item" href="{% url 'viewspeixe'%}">Visualizar</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Editar</a></li>
+            <li><a class="dropdown-item" href="{% url 'IndexPeixe'%}">Editar</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -48,9 +44,7 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="{% url 'create_racao'%}">cadastrar</a></li>
-            <li><a class="dropdown-item" href="{% url 'viewsracao'%}">Visualizar</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Editar</a></li>
+            <li><a class="dropdown-item" href="{% url 'IndexPeixe'%}">Editar</a></li>
           </ul>
         </li>
 

@@ -1,37 +1,58 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="br-pt">
+<head>
     <meta charset="UTF-8">
     <title>Formulario de Cadastro</title>
-<link rel="stylesheet" href="{% static 'css/create_piscicultor.css' %}">
-
+    <link rel="stylesheet" href="{% static 'css/create_piscicultor.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+<body>
     <div class="form-container">
-        <h2>Cadastro de Piscicultor</h2>
-        <form>
-            <div class="form-group">
-                <label for="name" class="form-label">Nome:</label>
-                <input type="text" id="name" class="form-input">
+        <div class="col-12 m-auto pt-2 pb-2 text-center">
+            <h1>Cadastro</h1>
+        </div>
 
-                 <div class="form-group">
-                <label for="Rg" class="form-label">Rg:</label>
-                <input type="Rg" id="Rg" class="form-input">
-
-            </div>
-
-            <div class="form-group">
-                <label for="contato" class="form-label">contato:</label>
-                <input type="contato" id="contato" class="form-input">
-
-            </div>
-            <div class="form-group">
-                <label for="password" class="form-label">Senha:</label>
-                <input type="password" id="password" class="form-input">
-            </div>
-            <button type="submit" class="form-button">Cadastrar</button>
-
-        </form>
+        <div class="col-12 m-auto pt-2 pb-2 text-center">
+            <div id="result"></div>
+           <form name="formPiscicultor" id="formPiscicultor" action="{% if db %}/updatePiscicultor/{{dbpiscicultor.id}}/{% else %}/create_piscicultor/{% endif %}" method="POST">
+    {% csrf_token %}
+    <div class="form-group row">
+        <label for="{{ formPiscicultor.piscicultor.id_for_label }}" class="col-sm-2 col-form-label">Piscicultor:</label>
+        <div class="col-sm-10">
+            {{ formPiscicultor.nome }}
+        </div>
     </div>
+    <div class="form-group row">
+        <label for="{{ formPiscicultor.rg.id_for_label }}" class="col-sm-2 col-form-label">Rg:</label>
+        <div class="col-sm-10">
+            {{ formPiscicultor.rg }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="{{ formPiscicultor.contato.id_for_label }}" class="col-sm-2 col-form-label">Contato:</label>
+        <div class="col-sm-10">
+            {{ formPiscicultor.contato }}
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="{{ formPiscicultor.senha.id_for_label }}" class="col-sm-2 col-form-label">Senha:</label>
+        <div class="col-sm-10">
+            {{ formPiscicultor.senha }}
+        </div>
+    </div>
+    <div class="formPiscicultor-group mt-4 btn-container">
+        <div class="col-sm-10 offset-sm-2">
+            <input type="submit" class="btn btn-success" value="Salvar">
+            <a href="/" class="btn btn-success">Voltar</a>
+        </div>
+    </div>
+</form>
 
-    </body
-    </body>
+            {% load static %}
+            <script src="{% static 'javascripts.js' %}"></script>
+        </div>
+    </div>
+</body>
 </html>
+

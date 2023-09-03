@@ -1,35 +1,59 @@
-.form-container {
-    background-color: #b2d8ff;
-    border: 1px solid #ced4da;
-    padding: 15px;
-    width: 300px;
-    margin: 0 auto;
-    margin-top: 50px;
-    text-align: center;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  }
-
-
-  .form-container .form-row {
+/* Estilos para a página de formulário de cadastro */
+body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
     display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-
-  .form-container .form-row label {
-    flex: 0 0 120px;
-  }
-
-  .form-container .form-row input,
-  .form-container .form-row select {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-  }
-
-.btn-success {
-  background-color: #28a745;
-  border-color: #28a745;
-
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    height: 100vh; /* 100% da altura da viewport */
+    margin: 0; /* Remova a margem padrão do corpo */
 }
+
+.form-container {
+    max-width: 1000px; /* Ajuste o valor conforme necessário */
+    width: 80%; /* Adicione uma largura fixa para evitar que o conteúdo seja muito largo */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center; /* Centraliza o conteúdo horizontalmente */
+    background-color: lightblue;
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left; /* Alinha o texto dos rótulos à esquerda */
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+    width: 100%; /* Ou ajuste a largura conforme necessário */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.btn-container {
+    text-align: center;
+    margin-top: 20px; /* Adicione uma margem superior para espaçamento */
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
