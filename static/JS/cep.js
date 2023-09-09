@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const cepSelect = document.getElementById('cep');
 
 
-
     fetch('https://viacep.com.br/ws/')
         .then(response => response.json())
         .then(data => {
