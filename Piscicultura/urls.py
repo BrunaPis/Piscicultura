@@ -15,16 +15,27 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
+from app.viewsets import PiscicultoresViewSet, ViveirosViewSet, PeixesViewSet,RacaoViewSet
+
+router = routers.DefaultRouter()
+router.register(r'Piscicultores', PiscicultoresViewSet, basename="Piscicultores")
+router.register(r'Viveiros', ViveirosViewSet, basename="Viveiros")
+router.register(r'Peixes', PeixesViewSet, basename="Peixes")
+router.register(r'Racao', RacaoViewSet, basename="Racao")
+
 
 from app.views import create_piscicultor,viewspiscicultor, editPiscicultor, updatePiscicultor, IndexPiscicultor, deletePiscicultor
 from app.views import create_viveiro,viewsviveiro,editViveiro,updateViveiro,deleteViveiro,IndexViveiro
 from app.views import home,login,Index,create_peixe,viewspeixe,updatePeixe,editPeixe,deletePeixe,IndexPeixe
-from app.views import viewspiscicultor,viewsracao,create_racao,updateRacao,editRacao,deleteRacao,IndexRacao
+from app.views import viewspiscicultor,viewsracao,create_racao,updateRacao,editRacao,deleteRacao,IndexRacao, cep
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
     path('login/', login, name='login'),
+    path("api/", include(router.urls)),
+    path('cep/', cep, name='cep'),
     path('create_piscicultor/',create_piscicultor, name='create_piscicultor'),
     path('viewspiscicultor/<int:pk>/', viewspiscicultor, name='viewspiscicultor'),
     path('editPiscicultor/<int:pk>/', updatePiscicultor, name='editPiscicultor'),
@@ -53,7 +64,6 @@ urlpatterns = [
     path('updateRacao/<int:pk>/', updateRacao, name='updateRacao'),
     path('deleteRacao/<int:pk>/', deleteRacao, name='deleteRacao'),
     path('IndexRacao/', IndexRacao, name='IndexRacao'),
-
 
 
 

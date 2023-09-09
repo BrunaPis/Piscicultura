@@ -17,23 +17,6 @@ def home(request):
 
 
 
-
-
-def create_racao(request):
-    return render(request, 'create_racao.html')
-
-
-
-def viewsracao(request):
-    return render(request, 'viewsracao.html')
-
-
-
-
-
-
-
-
 def create_piscicultor(request):
     if request.method == 'POST':
         form = PiscicultoresForm(request.POST or None)
@@ -247,3 +230,8 @@ def deleteRacao(request, pk):
     db = Racao.objects.get(pk=pk)
     db.delete()
     return redirect('IndexRacao')
+
+
+
+def cep(request):
+    return render(request, 'cep.html')

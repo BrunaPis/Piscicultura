@@ -10,7 +10,7 @@ from .models import Piscicultores,Peixes, Racao
 class PiscicultoresForm(forms.ModelForm):
     class Meta:
         model = Piscicultores
-        fields = ['nome', 'rg', 'contato', 'senha']  # Adicione 'senha' se ainda não estiver lá.
+        fields = ['nome', 'rg','cep','cidade', 'contato', 'senha']  # Adicione 'senha' se ainda não estiver lá.
 
 
 class ViveirosForm(ModelForm):
