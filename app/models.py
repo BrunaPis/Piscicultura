@@ -3,7 +3,7 @@ from django.db import models
 class Piscicultores(models.Model):
     nome = models.CharField(max_length=100)
     rg = models.CharField(max_length=20)
-    cep = models.IntegerField()
+    cep = models.CharField(max_length=10)
     cidade = models.CharField(max_length=50)
     contato = models.CharField(max_length=100)
     senha = models.CharField(max_length=100)
