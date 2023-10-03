@@ -9,9 +9,7 @@
 </head>
 
 <body>
- <div class="col-8 m-auto pt-3 pb-2 text-center">
-        <a href="/" class="btn btn-info">Voltar</a>
-    </div>
+
 
     <div class="col-8 m-auto pt-4 pb-2 text-center">
        <!-- On rows -->
@@ -22,7 +20,7 @@
       <th scope="col">#</th>
       <th scope="col">Especie</th>
       <th scope="col">Peso medio do Peixe</th>
-      <th scope="col"></th>
+
 
     </tr>
   </thead>
@@ -34,9 +32,9 @@
       <td>{{dbs.especie}}</td>
       <td>{{dbs.pesoMedioPeixe_kg}}</td>
       <td>
-                     <a href="/viewspeixe/{{dbs.id}}/" class ="btn btn-primary">Visualizar</a>
-                     <a href="/editPeixe/{{dbs.id}}/" class ="btn btn-primary">Editar</a>
-                     <a href="/deletePeixe/{{dbs.id}}/" class ="btn btn-danger btnDel">Deletar</a>
+                     <a href="/viewspeixe/{{dbs.id}}/" ><img src="{% static 'imagem/visualizar.png' %}"  alt="" width="30" height="30"></a>
+                     <td> <a href="/editPeixe/{{dbs.id}}/" ><img src="{% static 'imagem/editar.png' %}"  alt="" width="30" height="30"></a>
+                     <td> <a href="/deletePeixe/{{dbs.id}}/"class ="btn btn- btnDel" ><img src="{% static 'imagem/excluir.png' %}"  alt="" width="30" height="30"></a>
       </td>
     </tr>
   {% endfor %}
@@ -44,6 +42,8 @@
   </tbody>
 
 </table>
-
+ <div class="col-8 m-auto pt-3 pb-2 text-center">
+        <a href="/" class="btn btn-info">Voltar</a>
+    </div>
 </body>
 </html>

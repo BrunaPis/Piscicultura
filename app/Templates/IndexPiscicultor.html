@@ -22,8 +22,6 @@
       <th scope="col">#</th>
       <th scope="col">Piscicultor</th>
       <th scope="col">RG</th>
-        <th scope="col">Cep</th>
-        <th scope="col">Cidade</th>
         <th scope="col">Contato</th>
        <th scope="col">Senha</th>
 
@@ -38,19 +36,15 @@
        <th>{{dbs.id}}</th>
        <td>{{dbs.nome}}</td>
        <td>{{dbs.rg}}</td>
-       <td>{{dbs.cep}}</td>
-       <td>{{dbs.cidade}}</td>
        <td>{{dbs.contato}}</td>
        <td>{{dbs.senha}}</td>
 
       <td>
-                     <a href="/viewspiscicultor/{{dbs.id}}/" class ="btn btn-primary">Visualizar</a>
-                     <a href="/editPiscicultor/{{dbs.id}}/" class ="btn btn-primary">Editar</a>
-                     <a href="/deletePiscicultor/{{dbs.id}}/" class ="btn btn-danger btnDel">Deletar</a>
+                     <a href="/viewspiscicultor/{{dbs.id}}/" ><img src="{% static 'imagem/visualizar.png' %}"  alt="" width="30" height="30"></a>
+                    <td> <a href="/editPiscicultor/{{dbs.id}}/"><img src="{% static 'imagem/editar.png' %}"  alt="" width="30" height="30"></a>
+                   <td>  <a href="/deletePiscicultor/{{dbs.id}}/"  class ="btn btn- btnDel"><img src="{% static 'imagem/excluir.png' %}"  alt="" width="30" height="30"></a>
+   </td>
 
-
-
-      </td>
     </tr>
   {% endfor %}
  <script src="{% static 'js/confirm_delete.js' %}"></script>

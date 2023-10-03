@@ -7,43 +7,55 @@
 }
 
 body {
-    background: #b2d8ff;
+
+
+background: #b2d8ff;
     min-height: 100vh;
     min-width: 100vw;
     display: flex;
     align-items: center;
-    justify-content: center;
+
+
+justify-content: center;
 }
 
-.viewspeixe{
-    background: #b2d8ff;
-    max-width: 400px;
-    min-height: 30vh;
+.container {
+
+    text
+text-align: center;
+}
+.square-container {
+    width: 400px;
+    height: 400px;
+}
+.viewspeixe {
+    background: #ffffff;
+    max-width: 600px; /* Aumente o valor para tornar o quadrado maior */
+    min-height: 50vh; /* Aumente o valor para tornar o quadrado maior */
     padding: 2rem;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+
+    box
+box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
 }
 
-label.h3{
+.viewspeixe h1 {
     font-weight: 600;
     margin-bottom: 2rem;
-    margin-padding: 5%;
-    position: relative;
 }
 
-.btn-volt{
+.btn-volt {
     background-color: darkgreen;
-    border-color:rgba(198, 247, 100, 0.808);
+    border-color: rgba(198, 247, 100, 0.808);
     color: white;
-    width: 100%;
-    height: 40px;
-    margin-bottom: 1%;
-    margin-left: 0px;
-    padding: 0%;
-    font-size: large;
-    align-items: center;
+
+
+height: 40px;
+
+
+font-size: large;
     border-radius: 8px;
     position: relative;
     top: -10px;
-    left: 0px;
+    left: 0;
 }

@@ -8,17 +8,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 </head>
 <body>
-
-<div class="form-container col-md-4 m-auto">
+<div class="form-container square-container">
     <div class="pt-2 pb-2 text-center">
-        <h1>Cadastro PEIXE</h1>
+        <h1>Cadastro Peixe</h1>
     </div>
     <div class="pt-2 pb-2 text-center">
         <div id="result"></div>
         <form name="formPeixe" id="formPeixe" action="{% if db %}/updatePeixe/{{db.id}}/{% else %}/create_peixe/{% endif %}" method="POST">
             {% csrf_token %}
             <div class="form-group">
-                <label for="{{ formPeixe.especie.id_for_label }}"> Especie:  </label>
+                <label for="{{ formPeixe.especie.id_for_label }}"> Especie:</label>
                 {{ formPeixe.especie }}
             </div>
             <div class="form-group">
@@ -34,7 +33,6 @@
                 </div>
             </div>
         </form>
-        <script src="{% static 'javascripts.js' %}"></script>
     </div>
 </div>
 

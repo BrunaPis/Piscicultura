@@ -9,9 +9,7 @@
 </head>
 
 <body>
- <div class="col-8 m-auto pt-3 pb-2 text-center">
-        <a href="/" class="btn btn-info">Voltar</a>
-    </div>
+
 
     <div class="col-8 m-auto pt-4 pb-2 text-center">
        <!-- On rows -->
@@ -24,7 +22,7 @@
       <th scope="col">Marca da Ração</th>
         <th scope="col">Preço da Ração</th>
         <th scope="col">Proteina Bruta</th>
-      <th scope="col"></th>
+
 
     </tr>
   </thead>
@@ -38,16 +36,18 @@
      <td>{{dbs.precoracao}}</td>
      <td>{{dbs.protreinabruta}}</td>
       <td>
-                     <a href="/viewsracao/{{dbs.id}}/" class ="btn btn-primary">Visualizar</a>
-                     <a href="/editRacao/{{dbs.id}}/" class ="btn btn-primary">Editar</a>
-                     <a href="/deleteRacao/{{dbs.id}}/" class ="btn btn-danger btnDel">Deletar</a>
-      </td>
+                     <a href="/viewsracao/{{dbs.id}}/" ><img src="{% static 'imagem/visualizar.png' %}"  alt="" width="30" height="30"></a>
+                    <td> <a href="/editRacao/{{dbs.id}}/" ><img src="{% static 'imagem/editar.png' %}"  alt="" width="30" height="30"></a>
+                   <td>  <a href="/deleteRacao/{{dbs.id}}/"  class ="btn btn- btnDel"><img src="{% static 'imagem/excluir.png' %}"  alt="" width="30" height="30"></a>
+   </td>
     </tr>
   {% endfor %}
  <script src="{% static 'js/confirm_delete.js' %}"></script>
   </tbody>
 
 </table>
-
+<div class="col-8 m-auto pt-3 pb-2 text-center">
+        <a href="/" class="btn btn-info">Voltar</a>
+    </div>
 </body>
 </html>
