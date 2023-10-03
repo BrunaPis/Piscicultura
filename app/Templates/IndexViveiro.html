@@ -18,22 +18,22 @@
         <table class="table table-bordered small-font">
             <thead>
             <tr>
-               <th scope="col">#</th>
-          <th scope="col" style="font-size: 12px; white-space: nowrap;">Biomassa do viveiro</th>
-<th scope="col" style="font-size: 12px; white-space: nowrap;">Data Inicial</th>
-<th scope="col" style="font-size: 12px; white-space: nowrap;">Mortalidade</th>
-<th scope="col" style="font-size: 12px; white-space: nowrap;">Data Retirada</th>
-<th scope="col" style="font-size: 12px; white-space: nowrap;">N° viveiro</th>
-<th scope="col" style="font-size: 12px; white-space: nowrap;">Temperatura</th>
-<th scope="col" style="font-size: 12px; white-space: nowrap;">Largura m²</th>
-<th scope="col" style="font-size: 12px; white-space: nowrap;">Ganho Viveiro</th>
-<th scope="col" style="font-size: 12px; white-space: nowrap;">Lado menor m²</th>
-<th scope="col" style="font-size: 12px; white-space: nowrap;">PH da agua</th>
-<th scope="col" style="font-size: 12px; white-space: nowrap;">Amostragem Veveiro</th>
-<th scope="col" style="font-size: 12px; white-space: nowrap;">N° de peixe no Viveiro</th>
+                <th scope="col">#</th>
+                <th scope="col" style="font-size: 12px; white-space: nowrap;">Biomassa do viveiro</th>
+                <th scope="col" style="font-size: 12px; white-space: nowrap;">Data Inicial</th>
+                <th scope="col" style="font-size: 12px; white-space: nowrap;">Mortalidade</th>
+                <th scope="col" style="font-size: 12px; white-space: nowrap;">Data Retirada</th>
+                <th scope="col" style="font-size: 12px; white-space: nowrap;">N° viveiro</th>
+                <th scope="col" style="font-size: 12px; white-space: nowrap;">Temperatura</th>
+                <th scope="col" style="font-size: 12px; white-space: nowrap;">Largura m²</th>
+                <th scope="col" style="font-size: 12px; white-space: nowrap;">Ganho Viveiro</th>
+                <th scope="col" style="font-size: 12px; white-space: nowrap;">Lado menor m²</th>
+                <th scope="col" style="font-size: 12px; white-space: nowrap;">PH da agua</th>
+                <th scope="col" style="font-size: 12px; white-space: nowrap;">Amostragem Veveiro</th>
+                <th scope="col" style="font-size: 12px; white-space: nowrap;">N° de peixe no Viveiro</th>
 
- </tr>
- </thead>
+            </tr>
+            </thead>
 
             <tbody>
             {% for dbs in db %}
@@ -52,16 +52,19 @@
                 <td>{{dbs.amostragemViveiro}}</td>
                 <td>{{dbs.numeroPeixesViveiro}}</td>
                 <td>
-                    <a href="/viewsviveiro/{{dbs.id}}/" ><img src="{% static 'imagem/visualizar.png' %}"  alt="" width="30" height="30"></a>
+                    <a href="/viewsviveiro/{{dbs.id}}/"><img src="{% static 'imagem/visualizar.png' %}" alt=""
+                                                             width="30" height="30"></a>
 
-                      <td> <a href="/editViveiro/{{dbs.id}}/" ><img src="{% static 'imagem/editar.png' %}"  alt="" width="30" height="30"></a>
+                <td><a href="/editViveiro/{{dbs.id}}/"><img src="{% static 'imagem/editar.png' %}" alt="" width="30"
+                                                            height="30"></a>
 
-                    <td> <a href="/deleteViveiro/{{dbs.id}}/"  class ="btn btn- btnDel"><img src="{% static 'imagem/excluir.png' %}"  alt="" width="30" height="30"></a>
+                <td><a href="/deleteViveiro/{{dbs.id}}/" class="btn btn- btnDel"><img
+                        src="{% static 'imagem/excluir.png' %}" alt="" width="30" height="30"></a>
 
                 </td>
             </tr>
-{% endfor %}
- <script src="{% static 'js/confirm_delete.js' %}"></script>
+            {% endfor %}
+            <script src="{% static 'js/confirm_delete.js' %}"></script>
             </tbody>
 
         </table>

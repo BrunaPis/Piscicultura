@@ -35,7 +35,6 @@ urlpatterns = [
     path('', home, name='home'),
     path('login/', login, name='login'),
     path("api/", include(router.urls)),
-    path('cep/', cep, name='cep'),
     path('create_piscicultor/',create_piscicultor, name='create_piscicultor'),
     path('viewspiscicultor/<int:pk>/', viewspiscicultor, name='viewspiscicultor'),
     path('editPiscicultor/<int:pk>/', updatePiscicultor, name='editPiscicultor'),

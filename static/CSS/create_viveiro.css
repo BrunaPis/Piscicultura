@@ -13,10 +13,10 @@ body {
     max-width: 1000px; /* Ajuste o valor conforme necessário */
     width: 80%; /* Adicione uma largura fixa para evitar que o conteúdo seja muito largo */
     padding: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #000; /* Bordas pretas */
     border-radius: 5px;
     text-align: center; /* Centraliza o conteúdo horizontalmente */
-    background-color: lightblue;
+    background-color: #ccc; /* Fundo cinza */
     margin: 0 auto; /* Centraliza horizontalmente */
 }
 
@@ -35,9 +35,10 @@ input[type="password"],
 input[type="number"] {
     width: 100%; /* Ou ajuste a largura conforme necessário */
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #000; /* Bordas pretas */
     border-radius: 3px;
     font-size: 16px;
+    background-color: #fff; /* Fundo branco */
 }
 
 .btn-container {
@@ -57,3 +58,4 @@ input[type="number"] {
 
 .btn:hover {
     background-color: #0056b3;
+}

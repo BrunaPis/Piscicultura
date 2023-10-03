@@ -106,15 +106,15 @@ def editViveiro(request, pk):
 
 
 def updateViveiro(request, pk):
-    Viveiros = get_object_or_404(Viveiros, pk=pk)
-    if request.method == 'POST':
-        form = Viveiros(request.POST, instance=Viveiros)
-        if form.is_valid():
-            form.save()
-            return redirect('IndexViveiro')
-    else:
-        form = Viveiros(instance=Viveiros)
-    return render(request, 'create_viveiro.html', {'formviveiro': form})
+        viveiro_instance = get_object_or_404(Viveiros, pk=pk)
+        if request.method == 'POST':
+            form = ViveirosForm(request.POST, instance=viveiro_instance)
+            if form.is_valid():
+                form.save()
+                return redirect('IndexViveiro')
+        else:
+            form = ViveirosForm(instance=viveiro_instance)
+        return render(request, 'create_viveiro.html', {'formViveiro': form})
 
 
 
@@ -159,14 +159,14 @@ def viewspeixe(request, pk):
 
 
 def updatePeixe(request, pk):
-    Peixes = get_object_or_404(Peixes, pk=pk)
+    peixe_instance = get_object_or_404(Peixes, pk=pk)
     if request.method == 'POST':
-        form = PeixesForm(request.POST, instance=Peixes)
+        form = PeixesForm(request.POST, instance=peixe_instance)
         if form.is_valid():
             form.save()
             return redirect('IndexPeixe')
     else:
-        form = PeixesForm(instance=Peixes)
+        form = PeixesForm(instance=peixe_instance)
     return render(request, 'create_peixe.html', {'formPeixe': form})
 
 
