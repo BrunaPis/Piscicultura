@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="br-pt">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Cadastro</title>
+    <link rel="stylesheet" href="{% static 'css/create_racao.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="form-container">
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <h1>Cadastro Ração</h1>
+    </div>
+
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <div id="result"></div>
+        <form name="formRacao" id="formRacao"
+              action="{% if db %}/updateRacao/{{db.id}}/{% else %}/create_racao/{% endif %}" method="POST">
+            {% csrf_token %}
+            <div class="form-row">
+                <div></div>
+                <div class="form-group col-md-6">
+                    <label for="{{ formRacao.quantidaderacaokg.id_for_label }}">Quantidade de ração kg:</label>
+                    {{ formRacao.quantidaderacaokg }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="{{ formRacao.marcaracao.id_for_label }}">Marca da ração:</label>
+                    {{ formRacao.marcaracao }}
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="{{ formRacao.precoracao.id_for_label }}">Preço da ração:</label>
+                    {{ formRacao.precoracao }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="{{ formRacao.protreinabruta.id_for_label }}">Proteina Bruta:</label>
+                    {{formRacao.protreinabruta }}
+                </div>
+            </div>
+            <div class="form-row justify-content-center">
+                <div class="col-md-2">
+                    <input type="submit" class="btn btn-success btn-block" value="Salvar">
+                </div>
+                <div class="col-md-2">
+                    <a href="/" class="btn btn-success btn-block">Voltar</a>
+                </div>
+            </div>
+    </div>
+
+</div>
+</body>
+
+</html>
+

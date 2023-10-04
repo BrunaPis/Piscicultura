@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+ <html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<div class="col-8 m-auto pt-2 pb-2 text-center">
+        <h1>Cadastro Viveiro</h1>
+    </div>
+
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <a href="/" class="btn btn-success">Voltar</a>
+    </div>
+
+<div class="col-8 m-auto pt-2 pb-2 text-center">
+    <div id="result"></div>
+        <form name="formviveiro" id="form2" action="{% if db %}/update2/{{db.id}}/{% else %}/create2/{% endif %}" method="POST">
+            {% csrf_token %}
+            <div class="formviveiro-group mt-4">Biomassa do Viveiro:{{formviveiro.biomassaViveiro}}</div>
+            <div class="formviveiro-group mt-4">Data Inicial:{{formviveiro.dataIniciar}}</div>
+            <div class="formviveiro-group mt-4">Mortalidade:{{formv.mortalidade}}</div>
+            <div class="formviveiro-group mt-4">Data da Retirada:{{formv.dataRetirada}}</div>
+            <div class="formviveiro-group mt-4">N° do Viveiro:{{formviveiro.numeroViveiro}}</div>
+            <div class="formviveiro-group mt-4">Temperatura:{{formviveiro.temperatura}}</div>
+            <div class="formviveiro-group mt-4">LarguraM:{{formviveiro.largura_M}}</div>
+            <div class="formviveiro-group mt-4">Ganho Viveiro:{{formviveiro.ganhoViveiro}}</div>
+            <div class="formviveiro-group mt-4">Lado MenorM:{{formviveiro.ladoMenor_M}}</div>
+            <div class="formviveiro-group mt-4">PH da Agua:{{formviveiro.pH_daAgua}}</div>
+            <div class="formviveiro-group mt-4">Amostragem Viveiro:{{formviveiro.amostragemViveiro}}</div>
+            <div class="formviveiro-group mt-4">N° de Peixe no viveiro:{{formviveiro.numeroPeixesViveiro}}</div>
+            <div class="formviveiro-group mt-4">
+                <input type="submit" class=" btn btn-success" value="Salvar">
+            </div>
+        </form>
+
+
+    </div>
+<body>
+ </html>

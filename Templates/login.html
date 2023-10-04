@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login </title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="login-container">
+
+    <img src="{% static 'imagem/logo3.png' %}" height="100px"alt="Logo3" class="logo3">
+    <form class="login-form" method="POST" action="/login">
+      <!-- Campos de login -->
+      <input type="text" name="username" placeholder="Nome de usuário">
+      <input type="password" name="password" placeholder="Senha">
+      <button type="submit" onclick="Home()">Entrar<br></button>
+    </form>
+     <div class="options">
+    <a href="#" class="forgot-password text-center">Esqueceu a senha?<br></a>
+    <a href="{% url 'create_piscicultor'%}" class="register">Cadastrar-se<br></a>
+  </div>
+ </body>
+
+</body>
+</html>

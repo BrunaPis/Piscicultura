@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="br-pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Cadastro</title>
+    <link rel="stylesheet" href="{% static 'css/dadosPeixe.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .dadosPeixe {
+            background-color: #f0f8ff; /* Azul Ciano */
+            padding: 20px;
+            border: 2px solid #00ced1; /* Azul Ciano */
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+        }
+    </style>
+
+</head>
+<body>
+
+<label class="dadosPeixe">
+<div class="col-8 m-auto pt-2 pb-2 text-center">
+    <h1>Visualização dos dados</h1>
+</div>
+
+<div class="col-8 m-auto pt-2 pb-2 text-center">
+    <strong> Especie:</strong>{{db.especie}}<br>
+    <strong> Peso Medio do Peixe_kg:</strong>{{db.pesoMedioPeixe_kg}}<br>
+</div>
+
+<div class="col-8 m-auto pt-2 pb-2 text-center">
+    <a href="/" class="btn btn-success">Voltar</a>
+</div>
+</label >
+
+</body>
+</html>
